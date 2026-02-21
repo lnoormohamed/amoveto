@@ -37,8 +37,10 @@ const socials = [
 
 export default function ComingSoonPage() {
   return (
+    <>
+      <style>{`html, body { background-color: #080c14; }`}</style>
     <div
-      className="relative flex min-h-screen flex-col overflow-hidden bg-[#080c14] text-white"
+      className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-[#080c14] text-white"
       style={{ fontFamily: "var(--font-geist-sans)" }}
     >
 
@@ -99,14 +101,14 @@ export default function ComingSoonPage() {
           </p>
 
           {/* Stats */}
-          <div className="mb-10 flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+          <div className="mb-10 grid w-full grid-cols-2 gap-3 sm:grid-cols-4">
             {[
               { value: "195+", label: "Countries" },
               { value: "50K+", label: "Products" },
               { value: "12M+", label: "Data points" },
               { value: "99.9%", label: "API uptime" },
             ].map((s) => (
-              <div key={s.label} className="rounded-2xl border border-white/10 bg-white/5 px-5 py-3.5 text-center backdrop-blur-sm">
+              <div key={s.label} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center backdrop-blur-sm">
                 <p className="text-xl font-extrabold text-white sm:text-2xl">{s.value}</p>
                 <p className="mt-0.5 text-xs text-white/35">{s.label}</p>
               </div>
@@ -173,5 +175,6 @@ export default function ComingSoonPage() {
       </footer>
 
     </div>
+    </>
   );
 }
