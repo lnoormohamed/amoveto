@@ -1,3 +1,4 @@
+import { redirect } from "next/navigation";
 import Link from "next/link";
 
 const destinations = [
@@ -79,6 +80,7 @@ const processSteps = [
 ];
 
 export default function HomePage() {
+  redirect("/coming-soon");
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100" style={{ fontFamily: "var(--font-geist-sans)" }}>
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_10%,rgba(245,158,11,0.18),transparent_45%),radial-gradient(circle_at_85%_20%,rgba(59,130,246,0.16),transparent_42%),linear-gradient(to_bottom,#0c0a09,#111827)]" />
