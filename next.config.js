@@ -12,7 +12,7 @@ if (
   typeof globalThis.localStorage.getItem !== "function"
 ) {
   try {
-    delete globalThis.localStorage;
+    Reflect.deleteProperty(globalThis, "localStorage");
   } catch {
     globalThis.localStorage = undefined;
   }
