@@ -3,15 +3,16 @@ import Link from "next/link";
 import { NotifyForm } from "./countdown";
 
 export const metadata: Metadata = {
-  title: "Coming Soon — WorldPriceIndex",
-  description: "WorldPriceIndex is launching soon. Sign up to get early access to global price data and inflation insights.",
+  title: "Coming Soon — AMoveTo",
+  description:
+    "AMoveTo is launching soon. Join the list for early access to private international relocation advisory and destination intelligence.",
 };
 
 const features = [
-  { icon: "📈", title: "Inflation Tracking",       desc: "195 countries, decades of history"          },
-  { icon: "🌍", title: "Country Price Compare",    desc: "Find the cheapest place to buy anything"    },
-  { icon: "📊", title: "Subscription Index",       desc: "Netflix, Spotify & more — tracked globally" },
-  { icon: "⚡", title: "Developer API",            desc: "Real-time data for your platform"           },
+  { icon: "🛂", title: "Residency Planning", desc: "Visa and permit pathway strategy" },
+  { icon: "🏡", title: "Property Search", desc: "Area shortlists and move-in support" },
+  { icon: "👨‍👩‍👧‍👦", title: "Family Relocation", desc: "Schools, healthcare, and logistics" },
+  { icon: "🌐", title: "Destination Intelligence", desc: "Country fit analysis for global moves" },
 ];
 
 const socials = [
@@ -38,143 +39,132 @@ const socials = [
 export default function ComingSoonPage() {
   return (
     <>
-      <style>{`html, body { background-color: #080c14; }`}</style>
-    <div
-      className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-[#080c14] text-white"
-      style={{ fontFamily: "var(--font-geist-sans)" }}
-    >
-
-      {/* ── Background ── */}
-      <div className="pointer-events-none absolute inset-0">
-        {/* Grid lines */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
-        {/* Glow orbs */}
-        <div className="absolute -top-32 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-600/20 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-violet-600/10 blur-[100px]" />
-        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-blue-600/10 blur-[100px]" />
-      </div>
-
-      {/* ── Header ── */}
-      <header className="relative z-10 px-4 py-5 sm:px-8">
-        <div className="mx-auto flex max-w-5xl items-center justify-between">
-          <Link href="/" className="text-lg font-bold tracking-tight">
-            World<span className="text-blue-400">Price</span>Index
-          </Link>
-          <Link
-            href="/"
-            className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/60 backdrop-blur-sm transition hover:bg-white/10 hover:text-white"
-          >
-            ← Home
-          </Link>
+      <style>{`html, body { background-color: #0c0a09; }`}</style>
+      <div
+        className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-stone-950 text-white"
+        style={{ fontFamily: "var(--font-geist-sans)" }}
+      >
+        <div className="pointer-events-none absolute inset-0">
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+              backgroundSize: "64px 64px",
+            }}
+          />
+          <div className="absolute -top-32 left-1/2 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-amber-500/20 blur-[120px]" />
+          <div className="absolute bottom-0 left-0 h-[420px] w-[420px] rounded-full bg-emerald-500/10 blur-[100px]" />
+          <div className="absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-sky-500/10 blur-[100px]" />
         </div>
-      </header>
 
-      {/* ── Main ── */}
-      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-12 sm:px-8">
-        <div className="w-full max-w-2xl text-center">
-
-          {/* Badge */}
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-sm font-semibold text-blue-400">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-400" />
-            We&apos;re building something incredible
-          </div>
-
-          {/* Heading */}
-          <h1 className="mb-5 text-5xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
-            Launching{" "}
-            <span
-              className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 bg-clip-text text-transparent"
+        <header className="relative z-10 px-4 py-5 sm:px-8">
+          <div className="mx-auto flex max-w-5xl items-center justify-between">
+            <Link href="/" className="text-lg font-bold tracking-tight">
+              AMove<span className="text-amber-400">To</span>
+            </Link>
+            <Link
+              href="/"
+              className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/70 backdrop-blur-sm transition hover:bg-white/10 hover:text-white"
             >
-              very soon.
-            </span>
-          </h1>
-
-          <p className="mb-10 text-base leading-relaxed text-white/50 sm:text-lg">
-            WorldPriceIndex is the global platform for price intelligence — track inflation,
-            compare costs across 195 countries, and access real-time data via API.
-          </p>
-
-          {/* Stats */}
-          <div className="mb-10 grid w-full grid-cols-2 gap-3 sm:grid-cols-4">
-            {[
-              { value: "195+", label: "Countries" },
-              { value: "50K+", label: "Products" },
-              { value: "12M+", label: "Data points" },
-              { value: "99.9%", label: "API uptime" },
-            ].map((s) => (
-              <div key={s.label} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center backdrop-blur-sm">
-                <p className="text-xl font-extrabold text-white sm:text-2xl">{s.value}</p>
-                <p className="mt-0.5 text-xs text-white/35">{s.label}</p>
-              </div>
-            ))}
+              ← Home
+            </Link>
           </div>
+        </header>
 
-          {/* Email form */}
-          <div className="mb-10">
-            <NotifyForm />
-            <p className="mt-3 text-xs text-white/30">
-              Join 2,400+ people on the early access list. No spam, ever.
+        <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-12 sm:px-8">
+          <div className="w-full max-w-2xl text-center">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-sm font-semibold text-amber-300">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-300" />
+              AMoveTo is launching soon
+            </div>
+
+            <h1 className="mb-5 text-5xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
+              Global relocation,
+              <span className="block bg-gradient-to-r from-amber-300 via-yellow-200 to-sky-300 bg-clip-text text-transparent">
+                handled with precision.
+              </span>
+            </h1>
+
+            <p className="mb-10 text-base leading-relaxed text-white/55 sm:text-lg">
+              We are building a private relocation platform for affluent individuals and families moving across borders
+              with confidence, discretion, and expert coordination.
             </p>
+
+            <div className="mb-10 grid w-full grid-cols-2 gap-3 sm:grid-cols-4">
+              {[
+                { value: "Private", label: "Advisory" },
+                { value: "Global", label: "Partner network" },
+                { value: "1:1", label: "Support model" },
+                { value: "High-touch", label: "Execution" },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className="flex min-h-32 flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center backdrop-blur-sm"
+                >
+                  <p className="whitespace-nowrap text-xl leading-none font-extrabold text-white sm:text-2xl">
+                    {s.value}
+                  </p>
+                  <p className="text-xs leading-none text-white/35">{s.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mb-10">
+              <NotifyForm />
+              <p className="mt-3 text-xs text-white/30">
+                Join the list for launch updates and early consultation access. No spam.
+              </p>
+            </div>
+
+            <div className="mb-8 flex items-center gap-4">
+              <div className="h-px flex-1 bg-white/5" />
+              <span className="text-xs uppercase tracking-widest text-white/25">What&apos;s included</span>
+              <div className="h-px flex-1 bg-white/5" />
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {features.map((f) => (
+                <div
+                  key={f.title}
+                  className="flex min-h-36 flex-col items-center justify-center gap-2 rounded-2xl border border-white/5 bg-white/[0.03] p-4 text-center backdrop-blur-sm"
+                >
+                  <span className="block text-2xl">{f.icon}</span>
+                  <p className="text-xs font-semibold text-white/85">{f.title}</p>
+                  <p className="text-xs leading-relaxed text-white/35">{f.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
+        </main>
 
-          {/* Divider */}
-          <div className="mb-8 flex items-center gap-4">
-            <div className="h-px flex-1 bg-white/5" />
-            <span className="text-xs text-white/25 uppercase tracking-widest">What&apos;s coming</span>
-            <div className="h-px flex-1 bg-white/5" />
+        <footer className="relative z-10 px-4 py-6 sm:px-8">
+          <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-xs text-white/25">© 2026 AMoveTo. All rights reserved.</p>
+
+            <div className="flex items-center gap-2">
+              {socials.map((s) => (
+                <Link
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/40 transition hover:bg-white/10 hover:text-white"
+                >
+                  {s.icon}
+                </Link>
+              ))}
+            </div>
+
+            <div className="flex gap-5 text-xs text-white/30">
+              {["Privacy", "Terms", "Contact"].map((label) => (
+                <Link key={label} href="#" className="transition hover:text-white/60">
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
-
-          {/* Features grid */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="rounded-2xl border border-white/5 bg-white/[0.03] p-4 text-left backdrop-blur-sm"
-              >
-                <span className="mb-2.5 block text-2xl">{f.icon}</span>
-                <p className="mb-1 text-xs font-semibold text-white/80">{f.title}</p>
-                <p className="text-xs leading-relaxed text-white/35">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </main>
-
-      {/* ── Footer ── */}
-      <footer className="relative z-10 px-4 py-6 sm:px-8">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-xs text-white/25">© 2026 WorldPriceIndex. All rights reserved.</p>
-
-          {/* Socials */}
-          <div className="flex items-center gap-2">
-            {socials.map((s) => (
-              <Link
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/40 transition hover:bg-white/10 hover:text-white"
-              >
-                {s.icon}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex gap-5 text-xs text-white/30">
-            {["Privacy", "Terms", "Contact"].map((l) => (
-              <Link key={l} href="#" className="transition hover:text-white/60">{l}</Link>
-            ))}
-          </div>
-        </div>
-      </footer>
-
-    </div>
+        </footer>
+      </div>
     </>
   );
 }

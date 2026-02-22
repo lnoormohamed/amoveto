@@ -4,7 +4,24 @@
  */
 import "./src/env.js";
 
+// Work around Node 25 exposing a malformed `localStorage` object in some
+// environments (e.g. `{}` without Web Storage methods), which breaks SSR.
+if (
+  typeof globalThis.localStorage === "object" &&
+  globalThis.localStorage !== null &&
+  typeof globalThis.localStorage.getItem !== "function"
+) {
+  try {
+    delete globalThis.localStorage;
+  } catch {
+    globalThis.localStorage = undefined;
+  }
+}
+
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  // Allow mobile devices on the local network to load Next.js dev assets.
+  allowedDevOrigins: ["192.168.1.81", "*.local"],
+};
 
 export default config;

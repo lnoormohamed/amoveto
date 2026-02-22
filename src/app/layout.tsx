@@ -4,10 +4,10 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "WorldPriceIndex — Global Price Data & Inflation Tracking",
+  title: "AMoveTo — International Relocation Advisory",
   description:
-    "Track inflation, compare prices across 195 countries, and access real-time pricing data for thousands of products via API. Find the cheapest country to buy anything.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+    "AMoveTo helps affluent individuals and families plan international moves with destination strategy, residency planning, and white-glove relocation support.",
+  icons: [{ rel: "icon", type: "image/svg+xml", url: "/favicon.svg" }],
 };
 
 const geist = Geist({
