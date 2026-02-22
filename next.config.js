@@ -14,7 +14,10 @@ if (
   try {
     Reflect.deleteProperty(globalThis, "localStorage");
   } catch {
-    globalThis.localStorage = undefined;
+    Object.defineProperty(globalThis, "localStorage", {
+      value: undefined,
+      configurable: true,
+    });
   }
 }
 
