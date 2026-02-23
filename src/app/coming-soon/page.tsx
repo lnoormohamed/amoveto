@@ -8,11 +8,34 @@ export const metadata: Metadata = {
     "AMoveTo is launching soon. Join the list for early access to private international relocation advisory and destination intelligence.",
 };
 
-const features = [
-  { icon: "🛂", title: "Residency Planning", desc: "Visa and permit pathway strategy" },
-  { icon: "🏡", title: "Property Search", desc: "Area shortlists and move-in support" },
-  { icon: "👨‍👩‍👧‍👦", title: "Family Relocation", desc: "Schools, healthcare, and logistics" },
-  { icon: "🌐", title: "Destination Intelligence", desc: "Country fit analysis for global moves" },
+const servicePillars = [
+  {
+    title: "Residency Strategy",
+    detail: "Pathway mapping, permit sequencing, and advisor coordination",
+    icon: "🛂",
+  },
+  {
+    title: "Property Positioning",
+    detail: "Neighborhood fit, search support, and move-ready planning",
+    icon: "🏡",
+  },
+  {
+    title: "Family Transition",
+    detail: "Schools, healthcare, staffing, and daily-life logistics",
+    icon: "👨‍👩‍👧‍👦",
+  },
+  {
+    title: "Destination Intelligence",
+    detail: "Country comparison across legal, tax, and lifestyle factors",
+    icon: "🌍",
+  },
+];
+
+const shortlist = [
+  { country: "Portugal", tag: "Lifestyle + EU access" },
+  { country: "UAE", tag: "Tax efficiency + infrastructure" },
+  { country: "Switzerland", tag: "Stability + privacy" },
+  { country: "Singapore", tag: "Asia base + safety" },
 ];
 
 const socials = [
@@ -39,131 +62,169 @@ const socials = [
 export default function ComingSoonPage() {
   return (
     <>
-      <style>{`html, body { background-color: #0c0a09; }`}</style>
+      <style>{`html, body { background-color: #08070a; }`}</style>
       <div
-        className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-stone-950 text-white"
+        className="relative min-h-[100dvh] overflow-hidden bg-[#08070a] text-stone-100"
         style={{ fontFamily: "var(--font-geist-sans)" }}
       >
         <div className="pointer-events-none absolute inset-0">
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-              backgroundSize: "64px 64px",
-            }}
-          />
-          <div className="absolute -top-32 left-1/2 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-amber-500/20 blur-[120px]" />
-          <div className="absolute bottom-0 left-0 h-[420px] w-[420px] rounded-full bg-emerald-500/10 blur-[100px]" />
-          <div className="absolute bottom-0 right-0 h-[420px] w-[420px] rounded-full bg-sky-500/10 blur-[100px]" />
+          <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "18px 18px" }} />
+          <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-amber-300/10 to-transparent" />
+          <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-emerald-300/10 blur-3xl" />
+          <div className="absolute right-0 top-12 h-96 w-96 rounded-full bg-sky-400/10 blur-3xl" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:72px_72px]" />
         </div>
 
-        <header className="relative z-10 px-4 py-5 sm:px-8">
-          <div className="mx-auto flex max-w-5xl items-center justify-between">
-            <Link href="/" className="text-lg font-bold tracking-tight">
-              AMove<span className="text-amber-400">To</span>
+        <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-7xl flex-col px-4 pb-6 pt-4 sm:px-6 sm:pt-6">
+          <header className="mb-6 flex items-center justify-between">
+            <Link href="/" className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+              AMove<span className="text-amber-300">To</span>
             </Link>
-            <Link
-              href="/"
-              className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/70 backdrop-blur-sm transition hover:bg-white/10 hover:text-white"
-            >
-              ← Home
-            </Link>
-          </div>
-        </header>
-
-        <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-12 sm:px-8">
-          <div className="w-full max-w-2xl text-center">
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-sm font-semibold text-amber-300">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-300" />
-              AMoveTo is launching soon
-            </div>
-
-            <h1 className="mb-5 text-5xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
-              Global relocation,
-              <span className="block bg-gradient-to-r from-amber-300 via-yellow-200 to-sky-300 bg-clip-text text-transparent">
-                handled with precision.
-              </span>
-            </h1>
-
-            <p className="mb-10 text-base leading-relaxed text-white/55 sm:text-lg">
-              We are building a private relocation platform for affluent individuals and families moving across borders
-              with confidence, discretion, and expert coordination.
-            </p>
-
-            <div className="mb-10 grid w-full grid-cols-2 gap-3 sm:grid-cols-4">
-              {[
-                { value: "Private", label: "Advisory" },
-                { value: "Global", label: "Partner network" },
-                { value: "1:1", label: "Support model" },
-                { value: "High-touch", label: "Execution" },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  className="flex min-h-32 flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center backdrop-blur-sm"
-                >
-                  <p className="whitespace-nowrap text-xl leading-none font-extrabold text-white sm:text-2xl">
-                    {s.value}
-                  </p>
-                  <p className="text-xs leading-none text-white/35">{s.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mb-10">
-              <NotifyForm />
-              <p className="mt-3 text-xs text-white/30">
-                Join the list for launch updates and early consultation access. No spam.
-              </p>
-            </div>
-
-            <div className="mb-8 flex items-center gap-4">
-              <div className="h-px flex-1 bg-white/5" />
-              <span className="text-xs uppercase tracking-widest text-white/25">What&apos;s included</span>
-              <div className="h-px flex-1 bg-white/5" />
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-              {features.map((f) => (
-                <div
-                  key={f.title}
-                  className="flex min-h-36 flex-col items-center justify-center gap-2 rounded-2xl border border-white/5 bg-white/[0.03] p-4 text-center backdrop-blur-sm"
-                >
-                  <span className="block text-2xl">{f.icon}</span>
-                  <p className="text-xs font-semibold text-white/85">{f.title}</p>
-                  <p className="text-xs leading-relaxed text-white/35">{f.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </main>
-
-        <footer className="relative z-10 px-4 py-6 sm:px-8">
-          <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-xs text-white/25">© 2026 AMoveTo. All rights reserved.</p>
-
             <div className="flex items-center gap-2">
               {socials.map((s) => (
                 <Link
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/40 transition hover:bg-white/10 hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 backdrop-blur transition hover:bg-white/10 hover:text-white"
                 >
                   {s.icon}
                 </Link>
               ))}
             </div>
+          </header>
 
-            <div className="flex gap-5 text-xs text-white/30">
-              {["Privacy", "Terms", "Contact"].map((label) => (
-                <Link key={label} href="#" className="transition hover:text-white/60">
-                  {label}
+          <main className="grid flex-1 grid-cols-1 gap-5 lg:grid-cols-[1.15fr_.85fr]">
+            <section className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/25 backdrop-blur-xl sm:p-8">
+              <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/25 bg-amber-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+                Launching Soon
+              </div>
+
+              <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                A private relocation service
+                <span className="mt-1 block bg-gradient-to-r from-amber-200 via-stone-100 to-sky-200 bg-clip-text text-transparent">
+                  for globally mobile families.
+                </span>
+              </h1>
+
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-stone-300 sm:text-base">
+                AMoveTo is building a premium relocation experience for affluent individuals moving to a new country.
+                We combine destination intelligence, residency strategy, and hands-on coordination so complex moves feel
+                structured and discreet.
+              </p>
+
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {[
+                  { value: "Private", label: "Advisory" },
+                  { value: "Global", label: "Coverage" },
+                  { value: "1:1", label: "Support" },
+                  { value: "Concierge", label: "Execution" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-2xl border border-white/10 bg-black/20 px-3 py-4 text-center"
+                  >
+                    <p className="truncate text-lg font-semibold leading-none text-white sm:text-xl">{item.value}</p>
+                    <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-stone-400">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-7 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent p-4 sm:p-5">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-stone-400">Early Access</p>
+                    <p className="mt-1 text-sm font-medium text-white">Get launch updates and consultation openings</p>
+                  </div>
+                  <p className="text-xs text-stone-400">No spam. High-signal updates only.</p>
+                </div>
+                <div className="mt-4">
+                  <NotifyForm />
+                </div>
+              </div>
+
+              <div className="mt-7">
+                <div className="mb-3 flex items-center justify-between gap-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
+                    Example Destination Shortlist
+                  </p>
+                  <span className="text-xs text-stone-500">Illustrative</span>
+                </div>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {shortlist.map((item) => (
+                    <div
+                      key={item.country}
+                      className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3"
+                    >
+                      <p className="text-sm font-semibold text-white">{item.country}</p>
+                      <p className="mt-1 text-xs leading-5 text-stone-400">{item.tag}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <aside className="flex flex-col gap-5">
+              <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl sm:p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">What AMoveTo Covers</p>
+                <div className="mt-4 space-y-3">
+                  {servicePillars.map((pillar) => (
+                    <div
+                      key={pillar.title}
+                      className="grid grid-cols-[36px_1fr] items-start gap-3 rounded-2xl border border-white/10 bg-black/20 p-3"
+                    >
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/5 text-lg">
+                        {pillar.icon}
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">{pillar.title}</p>
+                        <p className="mt-1 text-xs leading-5 text-stone-400">{pillar.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl sm:p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-200">How Launch Access Works</p>
+                <ol className="mt-4 space-y-3">
+                  {[
+                    "Join the early access list",
+                    "Receive launch updates and service announcements",
+                    "Request a private consultation when bookings open",
+                  ].map((step, index) => (
+                    <li key={step} className="flex gap-3 rounded-2xl border border-white/10 bg-black/20 p-3">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/15 text-xs font-semibold text-stone-200">
+                        {index + 1}
+                      </span>
+                      <p className="pt-0.5 text-sm leading-6 text-stone-200">{step}</p>
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-5 flex flex-col gap-2 text-xs text-stone-400">
+                  <Link href="/" className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center transition hover:bg-white/10 hover:text-white">
+                    Visit Homepage
+                  </Link>
+                  <Link href="mailto:hello@amoveto.com" className="text-center transition hover:text-white">
+                    hello@amoveto.com
+                  </Link>
+                </div>
+              </section>
+            </aside>
+          </main>
+
+          <footer className="mt-5 flex flex-col items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-xs text-stone-400 sm:flex-row">
+            <p>© 2026 AMoveTo. Private international relocation advisory.</p>
+            <div className="flex items-center gap-4">
+              {["Privacy", "Terms", "Contact"].map((item) => (
+                <Link key={item} href="#" className="transition hover:text-white">
+                  {item}
                 </Link>
               ))}
             </div>
-          </div>
-        </footer>
+          </footer>
+        </div>
       </div>
     </>
   );
